@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\File;
 
 class SettingController extends Controller
 {
@@ -39,17 +40,41 @@ class SettingController extends Controller
         ]);
         $validator = $this->validator($data);
 
+
+        if($request->file) {
+            $request->validate([
+                'file' => 'required|image|mimes:jpeg,jpg,png'
+            ]);
+
+            $imagelogo = Setting::find(7);
+    
+            $ext = $request->file->extension();
+            $imageName = 'logo.'.$ext;
+            $imageFolder = '/media/images';
+            //copiando a nova imagem
+            $request->file->move(public_path($imageFolder), $imageName);
+            //deletando a imagem atual
+            $urlImage = $imageFolder.'/'.$imageName;
+
+            Setting::find(7)->update([
+                'content' => $urlImage
+            ]);
+
+        }
+
+
         if($validator->fails()) {
             return redirect()->route('settings')
             ->withErrors($validator);
         }
 
         foreach ($data as $item => $value) {
-            
-            Setting::where('name', $item)->update([
-                'content' => $value
-            ]);
 
+            
+                Setting::where('name', $item)->update([
+                    'content' => $value
+                ]);
+            
         }
         
         return redirect()->route('settings')

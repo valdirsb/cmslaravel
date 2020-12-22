@@ -3,10 +3,12 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 use App\Models\Page;
+use App\Models\Setting;
 use App\Models\Customer;
 
 class AppServiceProvider extends ServiceProvider
@@ -62,5 +64,16 @@ class AppServiceProvider extends ServiceProvider
             
 
         });
+
+
+        //CONFIGURAÇÕES
+        $config = [];
+        $settings = Setting::all();
+        foreach ($settings as $setting) {
+            $config[$setting['name']] = $setting['content'];
+        }
+        View::share('front_config', $config);
+
+
     }
 }

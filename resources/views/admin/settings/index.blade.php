@@ -32,7 +32,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{route('settings.save')}}" method="POST" class="form-horizontal">
+            <form action="{{route('settings.save')}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 
@@ -79,6 +79,21 @@
                 </div>
 
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Imagem</label>
+                    <div class="custom-file col-sm-6">
+                        <input type="file" name="file" id="customFile" class="custom-file-input @error('file') is-invalid @enderror" >
+                        <label class="custom-file-label" for="customFile">Eescolha uma imagem</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-10">
+                        <img src="{{$settings['image']}}" id="category-img-tag" style="width:200px; height:100px; object-fit:cover" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
                         <input type="submit"  value="Salvar" class="btn btn-success" >
@@ -99,5 +114,28 @@
 
 {{-- Inserir JS personalizado --}}
 @section('js')
+
+<script>
+
+    $(function(){
+    
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+    
+                reader.onload = function (e) {
+                    $('#category-img-tag').attr('src', e.target.result);
+                }
+                $('#category-img-tag').attr('style',"width:200px; height:100px; object-fit:cover");
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    
+        $("#customFile").change(function(){
+            readURL(this);
+        });
+    
+    });
+</script>
 
 @endsection

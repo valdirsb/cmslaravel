@@ -1,5 +1,5 @@
 @extends('layouts.tema1.template')
-@section('contato-active', 'active')
+@section($page->slug.'-active', 'active')
 
 @section('content-template')
 

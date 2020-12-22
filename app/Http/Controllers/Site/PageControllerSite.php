@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\Pagecontent;
 use App\Models\Page;
+use App\Models\Setting;
 use Illuminate\Support\Facades\File;
 
 class PageControllerSite extends Controller
