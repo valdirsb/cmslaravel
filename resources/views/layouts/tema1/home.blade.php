@@ -31,7 +31,7 @@
             @foreach ($contents as $content)
                 @if ($content->type != 1)
                     <div class="col-md-3 d-flex">
-                        <div class="intro d-lg-flex w-100">
+                        <div class="intro d-lg-flex mx-1 w-100">
                             <div class="icon">
                                 <span class="{{$content->icon}}"></span>
                             </div>
