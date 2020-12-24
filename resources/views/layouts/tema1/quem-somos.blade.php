@@ -21,9 +21,7 @@
               <div class="row no-gutters">
                   <div class="col-md-6 d-flex align-items-stretch">
                       <div class="img img-3 w-100 d-flex justify-content-center align-items-center" style="background-image: url({{ asset('temas/tema1/images/about-1.jpg') }}); position: relative;">
-                          <a href="https://vimeo.com/45830194" class="play-video popup-vimeo d-flex align-items-center justify-content-center">
-                              <span class="fa fa-play"></span>
-                          </a>
+                          
                       </div>
                   </div>
                   <div class="col-md-6 wrap-about ftco-animate">

@@ -43,7 +43,7 @@
 			</div>
 		</div>
     
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background: #00ff00">
 	    <div class="container">
 	      <a class="navbar-brand" href="{{asset ('/'.$page->slug)}}">{{$front_config['title']}}</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -132,7 +132,7 @@
 	          <div class="col-md-12">
 		
 	            <p class="mb-0" style="color: rgba(255,255,255,.5);"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Desenvolvido por <i class="fa fa-heart color-danger" aria-hidden="true"></i> <a href="https://vasan.com.br" target="_blank">vasan.com.br</a>
 	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 	          </div>
 	        </div>

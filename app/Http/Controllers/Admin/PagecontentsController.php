@@ -91,7 +91,7 @@ class PagecontentsController extends Controller
             'title' => ['required', 'string', 'max:100'],
             'subtitle' => ['nullable','string', 'max:100'],
             'icon' => ['nullable','string', 'max:100'],
-            'content' => ['required','string', 'max:100']
+            'content' => ['required','string']
         ]);
 
         if($validator->fails()) {
@@ -180,7 +180,7 @@ class PagecontentsController extends Controller
                 'title' => ['required', 'string', 'max:100'],
                 'subtitle' => ['nullable','string', 'max:100'],
                 'icon' => ['nullable','string', 'max:100'],
-                'content' => ['required','string', 'max:100']
+                'content' => ['required','string']
             ]);
 
             if($request->file) {
