@@ -36,7 +36,7 @@ class SettingController extends Controller
     public function save(Request $request){
 
         $data = $request->only([
-            'title', 'subtitle', 'email', 'fone', 'bgcolor', 'textcolor'
+            'title', 'subtitle', 'email', 'address', 'fone', 'bgcolor', 'textcolor'
         ]);
         $validator = $this->validator($data);
 
@@ -86,6 +86,7 @@ class SettingController extends Controller
             'title' => ['string', 'max:100'],
             'subtitle' => ['string', 'max:100'],
             'email' => ['string', 'email'],
+            'address' => ['string'],
             'fone' => ['string', 'max:100'],
             'bgcolor' => ['string', 'regex:/#[A-Z0-9]{6}/i'],
             'textcolor' => ['string', 'regex:/#[A-Z0-9]{6}/i' ],

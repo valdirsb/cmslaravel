@@ -58,6 +58,13 @@
                 </div>
 
                 <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Endereço</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="address" value="{{$settings['address']}}" class="form-control" >
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Telefone</label>
                     <div class="col-sm-10">
                         <input type="text" name="fone" value="{{$settings['fone']}}" class="form-control" >
