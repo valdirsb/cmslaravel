@@ -70,8 +70,8 @@
         <div class="row mb-5">
           <div class="col-sm-12 col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2 logo"><a href="#">Law Firm</a></h2>
-              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <h2 class="ftco-heading-2 logo"><a href="#">{{$front_config['title']}}</a></h2>
+              <p>Siga nossas redes sóciais</p>
               <ul class="ftco-footer-social list-unstyled mt-2">
                 <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -81,7 +81,7 @@
           </div>
           <div class="col-sm-12 col-md">
             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">{{$front_config['title']}}</h2>
+              <h2 class="ftco-heading-2">Mapa do Site</h2>
               <ul class="list-unstyled">
               @foreach ($customer->pages as $page)
                 <li><a href="{{asset ('/'.$page->slug)}}"><span class="fa fa-chevron-right mr-2"></span>{{$page->name}}</a></li>
@@ -92,7 +92,7 @@
           
           <div class="col-sm-12 col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Alguma duvida?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon fa fa-map marker"></span><span class="text">{{$front_config['address']}}</span></li>
