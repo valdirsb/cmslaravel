@@ -45,7 +45,9 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background: #00ff00">
 	    <div class="container">
-	      <a class="navbar-brand" href="{{asset ('/'.$page->slug)}}">{{$front_config['title']}}</a>
+        <a class="navbar-brand" href="{{asset ('/'.$page->slug)}}">
+          <img src="{{$front_config['image']}}" alt="{{$front_config['title']}}" >
+        </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>

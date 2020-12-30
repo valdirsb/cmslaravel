@@ -96,7 +96,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
-                        <img src="{{$settings['image']}}" id="category-img-tag" style="width:200px; height:100px; object-fit:cover" />
+                        <img src="{{$settings['image']}}" id="category-img-tag" style="height:100px; object-fit:cover ; background-color: #d8d8d8" />
                     </div>
                 </div>
 
