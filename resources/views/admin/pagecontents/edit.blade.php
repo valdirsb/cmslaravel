@@ -83,10 +83,22 @@
                 <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" cols="30" rows="10">{{$content->content}}</textarea>
             </div>
         </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tipo</label>
+            <div class="col-sm-2">
+                <select name="type" class="form-control">
+                    <option value=1 {{$content->type==1?'selected':''}} >Tipo 1</option>
+                    <option value=2 {{$content->type==2?'selected':''}}>Tipo 2</option>
+                    <option value=3 {{$content->type==3?'selected':''}}>Tipo 3</option>
+                </select>
+            </div>
+        </div>
+
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
-                <input type="submit" value="Cadastrar" class="btn btn-success">
+                <input type="submit" value="Salvar" class="btn btn-success">
             </div>
         </div>   
     </form>

@@ -69,6 +69,18 @@
                 <textarea name="content" id="content" class="form-control @error('content') is-invalid @enderror" cols="30" rows="10">{{old('content')}}</textarea>
             </div>
         </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tipo</label>
+            <div class="col-sm-2">
+                <select name="type" class="form-control">
+                    <option value=1>Tipo 1</option>
+                    <option value=2>Tipo 2</option>
+                    <option value=3>Tipo 3</option>
+                </select>
+            </div>
+        </div>
+
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">

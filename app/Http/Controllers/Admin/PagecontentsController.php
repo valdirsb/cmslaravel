@@ -68,7 +68,8 @@ class PagecontentsController extends Controller
             'title',
             'subtitle',
             'icon',
-            'content'
+            'content',
+            'type'
         ]);
 
         if($request->file) {
@@ -91,7 +92,8 @@ class PagecontentsController extends Controller
             'title' => ['required', 'string', 'max:100'],
             'subtitle' => ['nullable','string', 'max:100'],
             'icon' => ['nullable','string', 'max:100'],
-            'content' => ['required','string']
+            'content' => ['required','string'],
+            'type' => ['required']
         ]);
 
         if($validator->fails()) {
@@ -113,6 +115,7 @@ class PagecontentsController extends Controller
             'subtitle'=> $data['subtitle'],
             'icon'=> $data['icon'],
             'content'=> $data['content'],
+            'type'=> $data['type'],
             'image' => $urlImage
         ]);
 
@@ -174,13 +177,15 @@ class PagecontentsController extends Controller
                 'subtitle',
                 'icon',
                 'content',
+                'type'
             ]);
 
             $validator = Validator::make($data, [
                 'title' => ['required', 'string', 'max:100'],
                 'subtitle' => ['nullable','string', 'max:100'],
                 'icon' => ['nullable','string', 'max:100'],
-                'content' => ['required','string']
+                'content' => ['required','string'],
+                'type' => ['required']
             ]);
 
             if($request->file) {
@@ -211,11 +216,14 @@ class PagecontentsController extends Controller
             $pagecontent->subtitle = $data['subtitle'];
             $pagecontent->icon = $data['icon'];
             $pagecontent->content = $data['content'];
+            $pagecontent->type = $data['type'];
 
 
             if(count( $validator->errors() ) > 0) {
                 return redirect()->route('pagecontent.edit', [
-                    'content' => $id
+                    'pageid' => $pagecontent->page_id ,
+                    'pagecontent' => $pagecontent->id
+
                 ])->withErrors($validator);
             }
 
